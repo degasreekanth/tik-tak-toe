@@ -44,28 +44,44 @@ button:hover {
 
 .todo-list li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
 
-.todo-list li span {
+.todo-list li .task-number {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #666;
+}
+
+.todo-list li .task-text {
   flex: 1;
   cursor: pointer;
 }
 
-.todo-list li.completed span {
+.todo-list li.completed .task-text {
   text-decoration: line-through;
   color: #888;
 }
 
-.todo-list li button {
+.todo-list li .complete-btn {
+  background-color: #28a745;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+.todo-list li .complete-btn:hover {
+  background-color: #218838;
+}
+
+.todo-list li .delete-btn {
   background-color: #dc3545;
   border-radius: 4px;
   padding: 5px 10px;
 }
 
-.todo-list li button:hover {
+.todo-list li .delete-btn:hover {
   background-color: #c82333;
 }

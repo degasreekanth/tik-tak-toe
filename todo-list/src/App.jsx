@@ -41,10 +41,21 @@ function App() {
         <button onClick={addTodo}>Add</button>
       </div>
       <ul className="todo-list">
-        {todos.map((todo) => (
+        {todos.map((todo, index) => (
           <li key={todo.id} className={todo.completed ? "completed" : ""}>
-            <span onClick={() => toggleTodo(todo.id)}>{todo.text}</span>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <span className="task-number">{index + 1}.</span>
+            <span className="task-text" onClick={() => toggleTodo(todo.id)}>
+              {todo.text}
+            </span>
+            <button
+              className="complete-btn"
+              onClick={() => toggleTodo(todo.id)}
+            >
+              {todo.completed ? "Undo" : "Complete"}
+            </button>
+            <button className="delete-btn" onClick={() => deleteTodo(todo.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
